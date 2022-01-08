@@ -41,6 +41,8 @@ data class FileItem(
             check(attributesNoFollowLinks.isSymbolicLink) { "Not a symbolic link" }
             return symbolicLinkTargetAttributes == null
         }
+
+    var isTopping:Boolean = false
 }
 
 @WorkerThread
