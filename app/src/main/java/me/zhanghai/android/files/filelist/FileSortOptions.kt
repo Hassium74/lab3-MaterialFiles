@@ -42,6 +42,11 @@ data class FileSortOptions(
                 .reversedCompat()
             comparator = isDirectoryComparator.then(comparator)
         }
+        val isToppingComparator = compareBy<FileItem>{it.isTopping}
+                .reversedCompat()
+            comparator = isToppingComparator.then(comparator)
+
+
         return comparator
     }
 

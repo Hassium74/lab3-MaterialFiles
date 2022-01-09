@@ -1212,6 +1212,20 @@ class FileListFragment : Fragment(), BreadcrumbLayout.Listener, FileListAdapter.
         }
     }
 
+    private fun changeFileToppingState(file:FileItem){
+                file.isTopping=!file.isTopping
+                /*view?.findViewById<LinearLayout>(R.id.itemLayout)?.setBackgroundColor(
+                if(file.isTopping){Color.LTGRAY}
+                else{Color.WHITE}
+        )*/
+                onSortOptionsChanged(viewModel.sortOptions)
+    }
+
+    override fun setTopping(file: FileItem) {
+                changeFileToppingState(file)
+    }
+
+
     override fun showPropertiesDialog(file: FileItem) {
         FilePropertiesDialogFragment.show(file, this)
     }
