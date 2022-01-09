@@ -291,6 +291,10 @@ class FileListAdapter(
                     listener.showPropertiesDialog(file)
                     true
                 }
+                R.id.action_set_topping -> {
+                    listener.setTopping(file)
+                    true
+                }
                 else -> false
             }
         }
@@ -337,5 +341,6 @@ class FileListAdapter(
         fun addBookmark(file: FileItem)
         fun createShortcut(file: FileItem)
         fun showPropertiesDialog(file: FileItem)
+        fun setTopping(file: FileItem)
     }
 }
